@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">MyDollarTracking</string>
+    <string name="new_account">New Account</string>
+    <string name="budget_name_hint">Enter a name for the account.</string>
+    <string name="account_name_label">Account Name</string>
+    <string name="date_paid_label">Date Paid:</string>
+    <string name="date_paid_hint">Enter the date paid</string>
+    <string name="amount_paid_label">Amount Paid:</string>
+    <string name="amount_paid_hint">Enter the amount paid</string>
+    <string name="select_category_label">Select a Category</string>
+    <string name="date_paid_Bttn">Pay Date</string>
+    <string name="add_payment">Add Payment</string>
+    <string name="budget_paid_label">Confirm Amount Paid:</string>
+    <string name="budget_email_button">Select Email Recipient</string>
+    <string name="budget_send_confirm">Send Confirmation</string>
+    <string name="empty">Empty</string>
+    <string name="Cat_Credit">Credit</string>
+    <string name="Cat_Entertainment">Entertainment</string>
+    <string name="Cat_Utility">Utility</string>
+    <string name="Cat_Food">Food</string>
+    <string name="Cat_Health">Health</string>
+    <string name="Confirm_Button">Confirm Selections</string>
+    <string-array name="spinner_account_cats">
+        <item>Credit</item>
+        <item>Utility</item>
+        <item>Food</item>
+        <item>Entertainment</item>
+        <item>Health</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

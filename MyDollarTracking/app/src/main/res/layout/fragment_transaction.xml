@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.droiddataplace.TransactionFragment">
+
+
+    <data>
+        <variable
+            name="transaction"
+            type="com.droiddataplace.data.TransactionsData" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dollarImage"
+            android:layout_width="353dp"
+            android:layout_height="134dp"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:layout_marginBottom="8dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/account_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/ic_baseline_monetization_on_24" />
+
+        <EditText
+            android:id="@+id/account_name"
+            android:layout_width="233dp"
+            android:layout_height="58dp"
+            android:drawablePadding="5dp"
+            android:hint="@string/account_name_label"
+            android:inputType="text|date"
+            android:minHeight="48dp"
+            android:text="@{transaction.acct_name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dollarImage" />
+
+
+
+        <EditText
+            android:id="@+id/account_date_paid"
+            android:layout_width="233dp"
+            android:layout_height="78dp"
+            android:hint="@string/date_paid_label"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_name" />
+
+
+        <EditText
+            android:id="@+id/amount_paid"
+            android:layout_width="233dp"
+            android:layout_height="78dp"
+            android:hint="@string/amount_paid_label"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:text="@{transaction.account_amount_paid}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_date_paid" />
+
+        <RadioGroup
+            android:id="@+id/accountsRadioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/question_horizontal_margin"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:layout_marginEnd="@dimen/question_horizontal_margin"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/account_name">
+
+        </RadioGroup>
+
+
+        <RadioButton
+            android:id="@+id/fifthAccountHealth_RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Health"
+            android:textSize="@dimen/answer_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_button"
+            tools:text="Health" />
+
+        <RadioButton
+            android:id="@+id/fourthAccountUtility_RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Utility"
+            android:textSize="@dimen/answer_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thirdAcountEntertainment_RadioButton"
+            tools:text="Utility" />
+
+        <RadioButton
+            android:id="@+id/thirdAcountEntertainment_RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Entertainment"
+            android:textSize="@dimen/answer_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondAccountCredit_RadioButton" />
+
+        <RadioButton
+            android:id="@+id/secondAccountCredit_RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Credit"
+            android:textSize="@dimen/answer_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fifthAccountHealth_RadioButton"
+            tools:text="Credit" />
+
+        <RadioButton
+            android:id="@+id/firstAccountFood_RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:checked="true"
+            android:text="Food"
+            android:textSize="@dimen/answer_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourthAccountUtility_RadioButton"
+            tools:text="Food" />
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="320dp"
+            android:layout_height="71dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/Confirm_Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amount_paid" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
