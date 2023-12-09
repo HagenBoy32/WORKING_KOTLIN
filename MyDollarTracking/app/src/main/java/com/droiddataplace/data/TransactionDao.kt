@@ -1,34 +1,41 @@
 package com.droiddataplace.data
 
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.droiddataplace.model.TransactionsData
 import java.util.*
-
+@Dao
 interface TransactionDao {
 
-    @Query("SELECT * FROM TransactionsData")
+   // @Query("SELECT * FROM TransactionsData")
+   // suspend fun getAccounts(): LiveData<List<TransactionsData>>
 
-    fun getAccounts(): LiveData<List<TransactionsData>>
 
-
-    @Query("SELECT * FROM money WHERE id=(:id)")
-    fun getAccount(id: UUID): LiveData<TransactionsData?>
+    @Query("SELECT * FROM transactionsdata ORDER BY id DESC")
+    fun getAllTransactions(): LiveData<List<TransactionsData>>
 
     @Update
-    fun updateAccount(account: TransactionsData)
+    suspend fun updateTransaction(transaction: TransactionsData)
 
-    @Insert
-    fun addAccount(account: TransactionsData)
+    @Delete
+    suspend fun deleteTransaction(transaction: TransactionsData)
 
-    @Query("DELETE FROM transaction")
-    fun deleteAll()
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun inserttransaction(transaction: TransactionsData)
+
+    @Query("DELETE FROM TRANSACTIONSDATA")
+    suspend fun deleteAll()
+
+   // @Query("SELECT * FROM transactionsdata WHERE acct_name LIKE :query OR acct_name LIKE :query")
+  //  suspend fun searchTransactions(query: String?) : LiveData<List<TransactionsData>>
 
 
-
-
-
+//searchTransactions
 
 
 }

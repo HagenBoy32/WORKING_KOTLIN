@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.droiddataplace.TransactionFragment">
+    tools:context="com.droiddataplace.fragments.NewTransactionFragment">
 
 
     <data>
         <variable
             name="transaction"
-            type="com.droiddataplace.data.TransactionsData" />
+            type="com.droiddataplace.model.TransactionsData" />
     </data>
 
     <ScrollView
@@ -92,7 +92,7 @@
 
 
         <RadioButton
-            android:id="@+id/fifthAccountHealth_RadioButton"
+            android:id="@+id/AccountHealth_RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -107,7 +107,7 @@
             tools:text="Health" />
 
         <RadioButton
-            android:id="@+id/fourthAccountUtility_RadioButton"
+            android:id="@+id/AccountUtility_RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -116,11 +116,11 @@
             android:textSize="@dimen/answer_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/thirdAcountEntertainment_RadioButton"
+            app:layout_constraintTop_toBottomOf="@+id/AccountEntertainment_RadioButton"
             tools:text="Utility" />
 
         <RadioButton
-            android:id="@+id/thirdAcountEntertainment_RadioButton"
+            android:id="@+id/AccountEntertainment_RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -129,10 +129,10 @@
             android:textSize="@dimen/answer_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/secondAccountCredit_RadioButton" />
+            app:layout_constraintTop_toBottomOf="@+id/AccountCredit_RadioButton" />
 
         <RadioButton
-            android:id="@+id/secondAccountCredit_RadioButton"
+            android:id="@+id/AccountCredit_RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -141,7 +141,7 @@
             android:textSize="@dimen/answer_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fifthAccountHealth_RadioButton"
+            app:layout_constraintTop_toBottomOf="@+id/AccountHealth_RadioButton"
             tools:text="Credit" />
 
         <RadioButton
@@ -155,7 +155,7 @@
             android:textSize="@dimen/answer_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fourthAccountUtility_RadioButton"
+            app:layout_constraintTop_toBottomOf="@+id/AccountUtility_RadioButton"
             tools:text="Food" />
 
         <Button

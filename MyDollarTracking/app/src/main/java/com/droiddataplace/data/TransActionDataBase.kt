@@ -1,24 +1,39 @@
 package com.droiddataplace.data
-import android.util.Log
+import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.droiddataplace.data.TransactionsData
+import com.droiddataplace.model.TransactionsData
+@Database(entities = [TransactionsData::class], version = 1)
+@TypeConverters(TransactionTypeConverters::class)
 abstract class TransActionDataBase:  RoomDatabase() {
 
 
-    abstract fun TransactionDao(): TransactionDao
+    abstract fun getTransactionDao(): TransactionDao
+    companion object{
+        @Volatile
+        private var instance: TransActionDataBase? = null
+        private val LOCK = Any()
 
-}
+        operator fun invoke(context: Context) = instance ?:
+        synchronized(LOCK){
+            instance ?:
+            createDatabase(context).also{
+                instance = it
+            }
+        }
 
+        private fun createDatabase(context: Context)=
+            Room.databaseBuilder(
+                context.applicationContext,
+                TransActionDataBase::class.java,
+                "transactionsdata_db"
+            ).build()
 
-val migration_1_2 = object : Migration(1, 1) {
-    override fun migrate(database: SupportSQLiteDatabase) {
-        Log.d("<<:*)>>", "<<TransactionDatabase>><<TransactionDataBase>> ")
-        database.execSQL(
-            "ALTER TABLE Transaction ADD COLUMN Paid''"
-        )
     }
+
+
 }
+
+
