@@ -5,13 +5,11 @@ import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.widget.DatePicker
-import androidx.fragment.app.DialogFragment
-//import com.droiddataplace.ARG_DATE
 import java.util.Calendar
 import java.util.Date
 import java.util.GregorianCalendar
 private const val ARG_DATE = "date"
-class DatePickerFragment : DialogFragment() {
+class DatePickerFragment : androidx.fragment.app.DialogFragment() {
 
     //Communication via callbacks
     interface Callbacks {
@@ -34,15 +32,14 @@ class DatePickerFragment : DialogFragment() {
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        // Use the current date as the default date in the picker
         val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val initialYear = calendar.get(Calendar.YEAR)
+        val initialmonth = calendar.get(Calendar.MONTH)
+        val initialday = calendar.get(Calendar.DAY_OF_MONTH)
         val date = arguments?.getSerializable(ARG_DATE) as Date
 
         calendar.time = date
-        val initialYear = calendar.get(Calendar.YEAR)
+
         val initialMonth = calendar.get(Calendar.MONTH)
         val initialDay = calendar.get(Calendar.DAY_OF_MONTH)
 

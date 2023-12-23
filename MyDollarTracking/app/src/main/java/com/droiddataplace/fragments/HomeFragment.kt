@@ -59,6 +59,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) , SearchView.OnQueryTextLis
         setUpRecyclerView()
 
         binding.fabAddNote.setOnClickListener {
+            Log.d("<<HomeFragment>>", "binding.fabAddNote ")
             it.findNavController().navigate(
                 R.id.action_homeFragment_to_newTransactionFragment
             )

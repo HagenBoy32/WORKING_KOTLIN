@@ -13,7 +13,7 @@ import com.droiddataplace.viewmodel.TransactionViewModelFactory
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
-    lateinit var  transactionViewModel : TransActionViewModel
+    lateinit var transactionViewModel : TransActionViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

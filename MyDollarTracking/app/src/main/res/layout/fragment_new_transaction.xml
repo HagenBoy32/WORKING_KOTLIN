@@ -53,10 +53,11 @@
 
 
         <EditText
-            android:id="@+id/account_date_paid"
+            android:id="@+id/account_date_Paid"
             android:layout_width="233dp"
             android:layout_height="78dp"
             android:hint="@string/date_paid_label"
+            android:text="Date Paid"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,101 +74,92 @@
             android:text="@{transaction.account_amount_paid}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/account_date_paid" />
+            app:layout_constraintTop_toBottomOf="@id/account_date_Paid" />
+
 
         <RadioGroup
             android:id="@+id/accountsRadioGroup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/question_horizontal_margin"
-            android:layout_marginTop="@dimen/vertical_margin"
+            android:layout_marginTop="208dp"
             android:layout_marginEnd="@dimen/question_horizontal_margin"
             android:animateLayoutChanges="true"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/account_name">
 
+            <RadioButton
+                android:id="@+id/AccountHealth_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Health"
+                android:textSize="@dimen/answer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirm_button"
+                tools:text="Health" />
+
+            <RadioButton
+                android:id="@+id/AccountUtility_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Utility"
+                android:textSize="@dimen/answer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AccountEntertainment_RadioButton"
+                tools:text="Utility" />
+
+            <RadioButton
+                android:id="@+id/AccountEntertainment_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Entertainment"
+                android:textSize="@dimen/answer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AccountCredit_RadioButton" />
+
+            <RadioButton
+                android:id="@+id/AccountCredit_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Credit"
+                android:textSize="@dimen/answer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AccountHealth_RadioButton"
+                tools:text="Credit" />
+
+            <RadioButton
+                android:id="@+id/firstAccountFood_RadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:checked="true"
+                android:text="Food"
+                android:textSize="@dimen/answer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AccountUtility_RadioButton"
+                tools:text="Food" />
+
+
         </RadioGroup>
-
-
-        <RadioButton
-            android:id="@+id/AccountHealth_RadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Health"
-            android:textSize="@dimen/answer_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/confirm_button"
-            tools:text="Health" />
-
-        <RadioButton
-            android:id="@+id/AccountUtility_RadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Utility"
-            android:textSize="@dimen/answer_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AccountEntertainment_RadioButton"
-            tools:text="Utility" />
-
-        <RadioButton
-            android:id="@+id/AccountEntertainment_RadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Entertainment"
-            android:textSize="@dimen/answer_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AccountCredit_RadioButton" />
-
-        <RadioButton
-            android:id="@+id/AccountCredit_RadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Credit"
-            android:textSize="@dimen/answer_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AccountHealth_RadioButton"
-            tools:text="Credit" />
-
-        <RadioButton
-            android:id="@+id/firstAccountFood_RadioButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:checked="true"
-            android:text="Food"
-            android:textSize="@dimen/answer_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AccountUtility_RadioButton"
-            tools:text="Food" />
-
-        <Button
-            android:id="@+id/confirm_button"
-            android:layout_width="320dp"
-            android:layout_height="71dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginEnd="32dp"
-            android:text="@string/Confirm_Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/amount_paid" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,9 @@ interface TransactionDao {
     @Query("SELECT * FROM transactionsdata ORDER BY id DESC")
     fun getAllTransactions(): LiveData<List<TransactionsData>>
 
+    @Query("SELECT * FROM transactionsdata WHERE id=(:id)")
+    fun getTransaction(id:UUID): LiveData<TransactionsData?>
+
     @Update
     suspend fun updateTransaction(transaction: TransactionsData)
 
@@ -31,11 +34,7 @@ interface TransactionDao {
     @Query("DELETE FROM TRANSACTIONSDATA")
     suspend fun deleteAll()
 
-   // @Query("SELECT * FROM transactionsdata WHERE acct_name LIKE :query OR acct_name LIKE :query")
-  //  suspend fun searchTransactions(query: String?) : LiveData<List<TransactionsData>>
 
-
-//searchTransactions
 
 
 }
