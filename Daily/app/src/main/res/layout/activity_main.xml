@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+
+            name="logsViewModel"
+            type="com.example.daily.myviewModel.LogsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_backgroun"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint2"
+            android:layout_width="390dp"
+            android:layout_height="421dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <EditText
+                android:id="@+id/ageET"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="71dp"
+                android:layout_marginBottom="05dp"
+                android:hint="enter age:"
+                android:text="@={logsViewModel.inputAge}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/weightET"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/weightET"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="10dp"
+                android:hint="enter weight:"
+                android:text="@={logsViewModel.inputWeight}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/Height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ageET"
+                app:layout_constraintVertical_bias="0.7" />
+
+
+            <EditText
+                android:id="@+id/Height"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="05dp"
+                android:hint="Height"
+                android:text="@={logsViewModel.inputHeight}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/exerciseET"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weightET"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <EditText
+                android:id="@+id/exerciseET"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Enter exercise:"
+                android:text="@={logsViewModel.inputExercise}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/cardioET"
+                app:layout_constraintEnd_toEndOf="@id/Height"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/Height"
+                app:layout_constraintVertical_bias="0.497" />
+
+
+            <EditText
+                android:id="@+id/cardioET"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Enter cardio:"
+                android:text="@={logsViewModel.inputCardio}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/date_ET"
+
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <EditText
+                android:id="@+id/date_ET"
+                android:layout_width="200dp"
+                android:layout_marginStart="40dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="40dp"
+                android:hint="Date"
+                android:text="@={logsViewModel.inputDate}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/cardioET"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="40dp" />
+
+            <Button
+                android:id="@+id/Update_btn"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="32dp"
+                android:onClick="@{()->logsViewModel.saveOrUpdate()}"
+                android:text="@={logsViewModel.saveOrUpdateButtonText}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/Clearbtn"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="2dp"
+                android:onClick="@{()->logsViewModel.clearAllorDelete()}"
+                android:text="@={logsViewModel.clearAllOrDeleteButtonText}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Update_btn"
+                app:layout_constraintVertical_bias="0.33" />
+
+            <Button
+                android:id="@+id/Date_btn"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="40dp"
+                android:onClick="@{()->logsViewModel.getDateButtonText"
+                android:text="@={logsViewModel.getDateButtonText}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/Clearbtn"
+                app:layout_constraintVertical_bias="0.632" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="385dp"
+            android:layout_height="227dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraint2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
